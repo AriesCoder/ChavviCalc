@@ -53,6 +53,14 @@ public class App
                     }
 
                     break;
+                case "+":
+                    numberA = numberA + numberB;
+                    addValue(numberA, numberB);
+                    break;
+                case "-":
+                    numberA = numberA - numberB;
+                    addValue(numberA, numberB);
+                    break;
                 
                 }
             }
