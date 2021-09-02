@@ -10,7 +10,6 @@ public class App
 {
     public static void main( String[] args ){
 
-        //String[] arr = {"a", "b", "+", "-", "*", "/", "c", "q"};
         float numberA = 0;
         float numberB = 0;
         
@@ -24,11 +23,53 @@ public class App
             if (command.equals("q")) {
                 System.out.println("Thank for using Chavvi Calc");
                 break;
-            }else{
-                addValue(numberA, numberB);
             }
+            switch (command){
+                case "a":
+                    System.out.printf("Enter a number: ");
+                    String number = input.nextLine();
+
+                    //check if the number is validation
+                    if (numberValidation(number)) {
+                        numberA = Float.parseFloat(number);
+                        addValue(numberA, numberB);
+                    } else {
+                        System.out.println("Error: Unknow command");
+                        addValue(numberA, numberB);
+                    }
+
+                    break;
+                case "b":
+                    System.out.printf("Enter a number: ");
+                    number = input.nextLine();
+                    
+                    //check if the number is validation
+                    if (numberValidation(number)){
+                        numberB = Float.parseFloat(number);
+                        addValue(numberA, numberB);
+                    }else{
+                        System.out.println("Error: Unknow command");
+                        addValue(numberA, numberB);
+                    }
+
+                    break;
+                
+                }
+            }
+        
+
+    }
+
+    private static boolean numberValidation(String number) {
+        try {
+            Float.parseFloat(number);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
-    }        
+    }
+        
+            
     
 
     private static void addValue(float a, float b){
