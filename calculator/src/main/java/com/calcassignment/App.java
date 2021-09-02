@@ -61,7 +61,27 @@ public class App
                     numberA = numberA - numberB;
                     addValue(numberA, numberB);
                     break;
-                
+                case "*":
+                    numberA = numberA * numberB;
+                    addValue(numberA, numberB);
+                    break;
+                case "/":
+                    if (numberB == 0){
+                        System.out.println("Error: Unable to divide by 0");
+                        addValue(numberA, numberB);
+                    }else{
+                        numberA = numberA / numberB;
+                        addValue(numberA, numberB);
+                        }
+                    break;
+                                    
+                case "c":
+                    addValue(0, 0);
+                    break;
+                default:
+                    System.out.println("ERROR: Unknown command");
+                    addValue(numberA, numberB);
+                    break;
                 }
             }
         
